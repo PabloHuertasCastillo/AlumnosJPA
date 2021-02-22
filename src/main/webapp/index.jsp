@@ -9,6 +9,6 @@
     </head>
     <body>
         <h1>Papas-CLM</h1>
-        <a href="AlumnosControler">Gestionar grupos</a>
+        <a href="AlumnosControler">Gestionar</a>
     </body>
 </html>
