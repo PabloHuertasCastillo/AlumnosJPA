@@ -52,17 +52,13 @@ public class AlumnosControler extends HttpServlet {
 
         rutaFicheros = config.getServletContext().getRealPath("").concat(File.separator).concat("ficheros");
 
-        rutaFicheroGrupoA = config.getServletContext().getRealPath("").concat(File.separator).concat("ficheros")
-                .concat(File.separator).concat("2daw_a.txt");
-        rutaFicheroGrupoB = config.getServletContext().getRealPath("").concat(File.separator).concat("ficheros")
-                .concat(File.separator).concat("2daw_b.txt");
+//        rutaFicheroGrupoA = config.getServletContext().getRealPath("").concat(File.separator).concat("ficheros")
+//                .concat(File.separator).concat("2daw_a");
+//        rutaFicheroGrupoB = config.getServletContext().getRealPath("").concat(File.separator).concat("ficheros")
+//                .concat(File.separator).concat("2daw_b");
 
-        try {
-            listadoGrupoA = Utilidades.getAlumnos(rutaFicheroGrupoA);
-            listadoGrupoB = Utilidades.getAlumnos(rutaFicheroGrupoB);
-        } catch (IOException ex) {
-            Logger.getLogger(AlumnosControler.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        listadoGrupoA = Utilidades.getAlumnos("2daw_a");
+        listadoGrupoB = Utilidades.getAlumnos("2daw_b");
 
     }
 
@@ -126,8 +122,8 @@ public class AlumnosControler extends HttpServlet {
 
         String grupo = (String) request.getParameter("grupo");
 
-        ArrayList<Alumno> alumnosA = Utilidades.getAlumnos(rutaFicheroGrupoA);
-        ArrayList<Alumno> alumnosB = Utilidades.getAlumnos(rutaFicheroGrupoB);
+        ArrayList<Alumno> alumnosA = Utilidades.getAlumnos("2daw_a");
+        ArrayList<Alumno> alumnosB = Utilidades.getAlumnos("2daw_a");
         ArrayList<Alumno> alumnosSalida = new ArrayList<Alumno>();
 
         for (int i = 1; i < 15; i++) {
